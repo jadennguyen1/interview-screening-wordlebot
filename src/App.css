@@ -1,0 +1,29 @@
+@media screen and (max-width: 600px) {
+    .container {
+        gap: 1rem;
+    }
+
+    .container .MuiTypography-root {
+        font-size: 24px;
+    }
+    .container .MuiButton-root {
+        width: 90px;
+        height: 35px;
+    }
+
+    .container .MuiButton-root .MuiTypography-root {
+        font-size: 18px;
+        letter-spacing: 1px;
+    }
+
+    .container .MuiCircularProgress-root {
+        font-size: 18px;
+    }
+
+    .cards {
+        font-size: 20px;
+        width: 45px;
+        height: 45px;
+        line-height: normal;
+    }
+}
