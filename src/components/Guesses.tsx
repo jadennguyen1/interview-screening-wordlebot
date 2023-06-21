@@ -13,6 +13,7 @@ const Guess: React.FC<GuessProps> = ({ guess, handleBoxClick }) => {
     return (
         <Grid
             item
+            role="words"
             component={motion.div}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -22,7 +23,7 @@ const Guess: React.FC<GuessProps> = ({ guess, handleBoxClick }) => {
         >
             {word.split("").map((letter, idx) => (
                 <Card
-                    className="cards"
+                    data-testid="cards"
                     key={idx}
                     component={motion.div}
                     whileTap={{ scale: 0.9 }}

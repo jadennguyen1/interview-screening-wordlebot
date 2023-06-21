@@ -136,7 +136,7 @@ const Wordle: React.FC = () => {
             <Typography variant="h4" gutterBottom align="center">
                 Word to guess: {error ? "An error has occurred." : isWin ? "" : guesses[index].word}
             </Typography>
-            <Grid container direction="column" alignItems="center">
+            <Grid data-testid="grid" container direction="column" alignItems="center">
                 {guesses.map((word, index) => (
                     <Guess handleBoxClick={handleBoxClick} guess={word} key={index} />
                 ))}
@@ -159,12 +159,13 @@ const Wordle: React.FC = () => {
             <Box display="flex" justifyContent="center" alignItems="center">
                 {!isWin && remainingGuesses > 0 && error === "" ? (
                     <Button
+                        data-testid="submit"
                         variant="contained"
                         disabled={isWin || remainingGuesses === 0 || isLoading || error !== ""}
                         onClick={fetchSuggestion}
                     >
                         {isLoading ? (
-                            <CircularProgress color="secondary" size={23} />
+                            <CircularProgress data-testid="loading" color="secondary" size={23} />
                         ) : (
                             <Typography letterSpacing={2}>Submit</Typography>
                         )}
